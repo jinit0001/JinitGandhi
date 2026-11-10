@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Websites.co.in Teardown · Jinit Gandhi</title>
+<meta name="description" content="I built a live site on a popular site builder, hit five real friction points, and traced each one to a likely cause with a fix.">
+<meta name="theme-color" content="#fff8ef">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='28' fill='%23ff6b4a'/%3E%3Ctext x='50' y='70' font-size='62' text-anchor='middle' fill='white' font-family='Arial' font-weight='700'%3EJ%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+</head><body>
+<div class="curtain"></div><div class="glow"></div>
+<header class="site"><div class="wrap nav">
+<a class="logo" href="../index.html"><i>J</i>Jinit Gandhi</a>
+<button class="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+<nav class="links">
+<a href="../index.html">Home</a><a href="../about.html">About</a><a href="../projects.html" class="active">Projects</a><a href="../contact.html" class="cta">Say hi</a>
+</nav></div></header>
+<main>
+<section class="pagehead"><div class="blob b1" style="background:#ffb84d;opacity:.35"></div><div class="wrap">
+<a href="../projects.html" style="font-weight:700;text-decoration:none;color:var(--coral)">← All projects</a>
+<h1 style="margin-top:18px">Websites.co.in Teardown</h1>
+<p class="lead">I built a live site on a popular site builder, hit five real friction points, and traced each one to a probable cause and a fix.</p>
+<div class="chips"><span class="chip">Product teardown</span><span class="chip">Hands-on testing</span><span class="chip">5 findings + a bonus</span><span class="chip">2026</span></div>
+</div></section>
+<section style="padding-top:10px"><div class="wrap article"><h2>Context</h2><p>I signed up on Websites.co.in and built a live site end to end: registration, business details, a page, and SEO setup. These are the five biggest friction points I hit, in the order I hit them.</p><h2>What I found</h2><div class="finding reveal"><span class="n">1</span><h3>The signup sidebar overlaps the form</h3>
+<p><span class="lbl">What happens</span><br>On the first signup screen, the purple promotional sidebar covers part of the form, including the Full Name field and some of the dashboard preview text.</p><p><span class="lbl">Why it matters</span><br>This is the first screen a new user sees. If a field looks blocked, some people will assume the form is broken and leave before they start, which is the worst place in the funnel to lose someone.</p><p><span class="lbl">Fix</span><br>Cap the sidebar width or collapse it on smaller screens, and run a responsive check on the signup page first since it has the highest stakes.</p></div><div class="finding reveal"><span class="n">2</span><h3>Location detection fails even after a correct manual address</h3>
+<p><span class="lbl">What happens</span><br>After I typed my address and PIN code manually, the form still showed "Unable to retrieve your location. Please enter your address manually."</p><p><span class="lbl">Why it matters</span><br>The message tells you to do something you have just done, which is confusing and weakens trust in the rest of the form.</p><p><span class="lbl">Fix</span><br>Separate the auto-detect failure from the manual-entry flow. If a valid address and PIN are present, hide the message or show "Location saved manually".</p></div><div class="finding reveal"><span class="n">3</span><h3>A duplicate dropdown renders on top of itself</h3>
+<p><span class="lbl">What happens</span><br>On Edit Business Location, the country-code dropdown appears twice, stacked, and covers the phone and email fields until it is closed.</p><p><span class="lbl">Why it matters</span><br>It is not only cosmetic. It blocks completing the form, and a new user may not realise they have to close it to reach the fields below.</p><p><span class="lbl">Fix</span><br>This looks like one component being mounted twice. Worth auditing how that field is created across the location-edit flow.</p></div><div class="finding reveal"><span class="n">4</span><h3>The map pin lands in the wrong place</h3>
+<p><span class="lbl">What happens</span><br>With the city and a postal code entered, "Locate on Map" placed the pin in a different, sparsely populated area more than 10 km away.</p><p><span class="lbl">Why it matters</span><br>For a local business tool, a wrong pin undermines the main promise that nearby visitors can find you.</p><p><span class="lbl">Fix</span><br>The lookup likely matches on city name alone. Weight the postal code more, or let the user drag the pin to correct it.</p></div><div class="finding reveal"><span class="n">5</span><h3>A confident SEO score on an empty page</h3>
+<p><span class="lbl">What happens</span><br>Before I wrote any real content, with one default keyword, the SEO widget already showed "44 / FAIR" with a coloured progress ring.</p><p><span class="lbl">Why it matters</span><br>A confident number on empty content is misleading. It gives false reassurance, and it erodes trust once the user realises almost nothing was scored.</p><p><span class="lbl">Fix</span><br>Do not show a number until a minimum amount of content exists, and show "Add content to see your SEO score" until then.</p></div><div class="callout"><b>Bonus</b>The "Mail" button on my published site uses a plain mailto link with no fallback. If the device has no email client set up, it silently does nothing. A broken contact method with no feedback is a lost lead nobody sees.</div>
+<div class="nextprev"><a href="aicines.html"><small>← Previous</small><b>AICines Teardown</b></a><a href="keymood-ai.html"><small>Next →</small><b>KeyMood-AI</b></a></div>
+</div></section>
+</main>
+<footer><div class="wrap row">
+<div><b style="font-family:var(--display);font-size:1.2rem">Jinit Gandhi</b><br><span style="color:var(--muted)">Built by hand in 2026. Thanks for stopping by.</span></div>
+<div><a href="https://linkedin.com/in/jinit-gandhi-1b70b4298" target="_blank" rel="noopener">LinkedIn</a><a href="https://github.com/jinit0001" target="_blank" rel="noopener">GitHub</a><a href="mailto:gandhijinit@gmail.com">Email</a></div>
+</div></footer>
+<div class="toast" role="status"></div>
+<script src="../js/main.js"></script>
+</body></html>

@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>KeyMood-AI · Jinit Gandhi</title>
+<meta name="description" content="Can you tell how someone feels from how they type, without ever collecting what they type? A privacy-first take on emotion detection.">
+<meta name="theme-color" content="#fff8ef">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='28' fill='%23ff6b4a'/%3E%3Ctext x='50' y='70' font-size='62' text-anchor='middle' fill='white' font-family='Arial' font-weight='700'%3EJ%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+</head><body>
+<div class="curtain"></div><div class="glow"></div>
+<header class="site"><div class="wrap nav">
+<a class="logo" href="../index.html"><i>J</i>Jinit Gandhi</a>
+<button class="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+<nav class="links">
+<a href="../index.html">Home</a><a href="../about.html">About</a><a href="../projects.html" class="active">Projects</a><a href="../contact.html" class="cta">Say hi</a>
+</nav></div></header>
+<main>
+<section class="pagehead"><div class="blob b1" style="background:#7c6cff;opacity:.35"></div><div class="wrap">
+<a href="../projects.html" style="font-weight:700;text-decoration:none;color:var(--coral)">← All projects</a>
+<h1 style="margin-top:18px">KeyMood-AI</h1>
+<p class="lead">Reading emotion from typing, without reading the data. A privacy-first product, built from a messy first attempt.</p>
+<div class="chips"><span class="chip">Team of 4</span><span class="chip">I coordinated and built</span><span class="chip">Python · FastAPI · PostgreSQL</span><span class="chip">2026</span></div>
+</div></section>
+<section style="padding-top:10px"><div class="wrap article">
+<h2>The problem</h2>
+<p>Most emotion-detection tools collect a lot of personal data in one place: camera feeds, voice, biometric sensors. That works, but it means trusting someone else with very sensitive information.</p>
+<p>KeyMood-AI started from a different question. Could you tell something as personal as someone's emotional state from something as ordinary as <b>how they type</b> (typing speed, how long a key is held, the gaps between keystrokes) without ever collecting their raw data in one place? That second part, privacy by design with federated learning, was never an afterthought. It was the whole point.</p>
+<h2>Scoping it as a team</h2>
+<p>I coordinated a four-person team from planning to delivery. Three questions shaped the work:</p>
+<ul><li><b>What is the smallest signal set that could work?</b> We picked a handful of measurable typing features instead of trying to capture everything.</li>
+<li><b>What does privacy-preserving actually require?</b> The model has to learn without raw keystrokes leaving a person's device. That is a real constraint on how data is processed, not a label.</li>
+<li><b>What output actually matters?</b> Not a raw probability, but something a person can look at and understand: a dashboard that shows the predicted emotional state.</li></ul>
+<h2>What I owned</h2>
+<ul><li><b>Project coordination</b> from planning and milestones to keeping a four-person team on schedule.</li>
+<li><b>Structured experiments</b> on the feature set (typing speed, key-hold time, inter-key delay, error rate) to see what really predicted anything.</li>
+<li><b>The dashboard</b>, built to turn a technical model's output into something a non-technical reader can trust.</li>
+<li><b>Documentation and testing</b> throughout, not bolted on at the end.</li></ul>
+<h2>Growing it into a full backend</h2>
+<p>After the first version, the project grew into a FastAPI backend with PostgreSQL and Redis, split into modules such as authentication, profile and settings, emotion detection, guardian and SOS alerts, journaling, recommendations, analytics, friends and messaging. The suite of <b>205 automated tests</b> runs against a real database, and that is what made a difference.</p>
+<div class="callout"><b>A bug that real testing found</b>Tests that ran against a real database showed that writes were silently never being saved. Mocks would never have caught it. It was fixed before anything depended on it.</div>
+<h2>Where it got hard</h2>
+<p>Partway through, our results were not clean. The model was not picking up reliable patterns, the deadline was close, and the easy move was to call the feature set "good enough" and ship.</p>
+<p>I pushed the team to stop and re-run the experiments properly: redo feature extraction, re-check the raw signals, and be honest that we weren't ready yet. It cost time we didn't have much of, but shipping a model that looked finished and didn't work would have been worse.</p>
+<h2>What I'd do differently</h2>
+<p>I would build a small validation check much earlier, something that catches an unreliable pattern in hours instead of deep into the build. When a deadline is close, the instinct is to keep building. The fix is not willpower. It is cheap, early checks.</p>
+<div class="callout warm"><b>Why this is the work I want to do</b>KeyMood-AI forced a trade-off between doing something useful with personal data and refusing to centralise it because that is easier. Holding both at once, and slowing down when the results weren't honest yet, is the instinct I want to bring to any project.</div>
+<p><a class="btn" href="https://github.com/jinit0001/module-2" target="_blank" rel="noopener">See the backend on GitHub ↗</a></p>
+
+<div class="nextprev"><a href="websites-co-in.html"><small>← Previous</small><b>Websites.co.in Teardown</b></a><a href="opentrace.html"><small>Next →</small><b>OpenTrace</b></a></div>
+</div></section>
+</main>
+<footer><div class="wrap row">
+<div><b style="font-family:var(--display);font-size:1.2rem">Jinit Gandhi</b><br><span style="color:var(--muted)">Built by hand in 2026. Thanks for stopping by.</span></div>
+<div><a href="https://linkedin.com/in/jinit-gandhi-1b70b4298" target="_blank" rel="noopener">LinkedIn</a><a href="https://github.com/jinit0001" target="_blank" rel="noopener">GitHub</a><a href="mailto:gandhijinit@gmail.com">Email</a></div>
+</div></footer>
+<div class="toast" role="status"></div>
+<script src="../js/main.js"></script>
+</body></html>

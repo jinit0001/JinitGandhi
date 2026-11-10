@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>OpenTrace · Jinit Gandhi</title>
+<meta name="description" content="A tool that shows everyday people what their public GitHub and Reddit footprint says about them, scored and explained in plain language.">
+<meta name="theme-color" content="#fff8ef">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='28' fill='%23ff6b4a'/%3E%3Ctext x='50' y='70' font-size='62' text-anchor='middle' fill='white' font-family='Arial' font-weight='700'%3EJ%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+</head><body>
+<div class="curtain"></div><div class="glow"></div>
+<header class="site"><div class="wrap nav">
+<a class="logo" href="../index.html"><i>J</i>Jinit Gandhi</a>
+<button class="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+<nav class="links">
+<a href="../index.html">Home</a><a href="../about.html">About</a><a href="../projects.html" class="active">Projects</a><a href="../contact.html" class="cta">Say hi</a>
+</nav></div></header>
+<main>
+<section class="pagehead"><div class="blob b1" style="background:#1fb5a6;opacity:.35"></div><div class="wrap">
+<a href="../projects.html" style="font-weight:700;text-decoration:none;color:var(--coral)">← All projects</a>
+<h1 style="margin-top:18px">OpenTrace</h1>
+<p class="lead">A full-stack tool that scores your digital footprint risk, from the problem definition all the way to a working product.</p>
+<div class="chips"><span class="chip">Team project</span><span class="chip">Requirements · APIs · QA</span><span class="chip">React · Node · Express · MongoDB</span><span class="chip">2026</span></div>
+</div></section>
+<section style="padding-top:10px"><div class="wrap article">
+<h2>The problem</h2>
+<p>Most people have no real idea what their public digital footprint says about them. A GitHub profile, a Reddit history, a few scattered posts: each is harmless alone, but together they can reveal patterns, habits and even security weak spots.</p>
+<p>There was no simple way for an everyday person to see this the way an attacker, an employer or just a curious stranger might. So OpenTrace did not start as "let's build a cybersecurity tool." It started as: <b>let's help someone see what is visible about them, and whether that is a risk.</b></p>
+<h2>Scoping it before building it</h2>
+<ul><li><b>Who is it for?</b> Everyday users who have never audited their own footprint, not security professionals.</li>
+<li><b>What is the smallest useful version?</b> Pull data from two high-signal sources (GitHub and Reddit), score the exposure, and explain why in plain language.</li>
+<li><b>What does "done" look like?</b> A person enters a profile and gets a risk score they can actually understand, not a wall of technical findings.</li></ul>
+<p>Narrowing to two sources let us ship something real and learn from it, instead of getting stuck on an endless version one.</p>
+<h2>What I owned</h2>
+<ul><li><b>Requirements and workflow:</b> input a profile, pull data through REST APIs, run AI-assisted risk scoring, and present results a non-technical user can act on.</li>
+<li><b>API integration</b> for GitHub and Reddit profile analysis, feeding the scoring logic.</li>
+<li><b>Testing and QA</b>, catching gaps before users would, and documenting the process for handover.</li>
+<li><b>The translation layer.</b> The hardest part wasn't the scoring. It was making the output make sense. A risk score with no explanation is useless.</li></ul>
+<h2>Where it got hard</h2>
+<p>Partway through, it became clear that our original scope did not hold up. Some of the data we planned to score against was not as clean or as available as we had assumed. The tempting move was to patch around it and keep going.</p>
+<p>Instead, I pushed to pause and rework the requirements properly: re-scope part of the workflow, get the team back on the same page about what we were building, and accept a short-term loss of speed. In return, we shipped something that held together.</p>
+<h2>What I'd do differently</h2>
+<p>I would write the acceptance criteria for each feature <b>before</b> building, so a mismatch like this shows up on paper instead of in code. The earlier a bad assumption is caught, the cheaper it is to fix.</p>
+<div class="callout warm"><b>Why this is the work I want to do</b>OpenTrace was not a fixed-spec assignment. It began as an ambiguous problem, and every decision after that (what to build, what to cut, when to slow down) was ours to make and defend.</div>
+
+<div class="nextprev"><a href="keymood-ai.html"><small>← Previous</small><b>KeyMood-AI</b></a><a href="aicines.html"><small>Next →</small><b>AICines Teardown</b></a></div>
+</div></section>
+</main>
+<footer><div class="wrap row">
+<div><b style="font-family:var(--display);font-size:1.2rem">Jinit Gandhi</b><br><span style="color:var(--muted)">Built by hand in 2026. Thanks for stopping by.</span></div>
+<div><a href="https://linkedin.com/in/jinit-gandhi-1b70b4298" target="_blank" rel="noopener">LinkedIn</a><a href="https://github.com/jinit0001" target="_blank" rel="noopener">GitHub</a><a href="mailto:gandhijinit@gmail.com">Email</a></div>
+</div></footer>
+<div class="toast" role="status"></div>
+<script src="../js/main.js"></script>
+</body></html>
