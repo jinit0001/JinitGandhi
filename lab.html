@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Lab · Jinit Gandhi</title>
+<meta name="description" content="Small working tools by Jinit Gandhi: a Typing Mood Lab and a Priority Matrix.">
+<meta property="og:title" content="Lab · Jinit Gandhi"><meta property="og:description" content="Small working tools by Jinit Gandhi: a Typing Mood Lab and a Priority Matrix.">
+<meta name="theme-color" content="#fff8ef">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='28' fill='%23ff6b4a'/%3E%3Ctext x='50' y='70' font-size='62' text-anchor='middle' fill='white' font-family='Arial' font-weight='700'%3EJ%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<script>document.documentElement.classList.add('js');try{var x=sessionStorage.getItem('vx'),y=sessionStorage.getItem('vy');if(x){document.documentElement.style.setProperty('--vx',x);document.documentElement.style.setProperty('--vy',y)}}catch(e){}</script>
+</head><body>
+<div id="loader"><div class="name"><span style="--i:0">J</span><span style="--i:1">i</span><span style="--i:2">n</span><span style="--i:3">i</span><span style="--i:4">t</span><span style="--i:5">&nbsp;</span><span style="--i:6">G</span><span style="--i:7">a</span><span style="--i:8">n</span><span style="--i:9">d</span><span style="--i:10">h</span><span style="--i:11">i</span></div><div class="bar"><i></i></div></div><div id="progress"></div><div class="curtain"><b>Jinit Gandhi</b></div><div class="glow"></div>
+<header class="site"><div class="wrap nav">
+<a class="logo" href="index.html"><i>J</i>Jinit Gandhi</a>
+<button class="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+<nav class="links"><a href="index.html">Home</a><a href="about.html">About</a><a href="projects.html">Projects</a><a href="lab.html" class="active">Lab</a><a href="contact.html" class="cta">Say hi</a></nav>
+</div></header>
+<main>
+<section class="pagehead"><div class="blob b3" style="opacity:.4" data-speed=".1"></div><div class="wrap">
+<span class="eyebrow">The Lab</span><h1 class="split">Small tools to try, not just read.</h1>
+<p class="lead fade-in" style="--d:.9s">These two tools are small working demos I built to practise the ideas behind my projects. Everything runs in your browser, and nothing you type is saved or sent anywhere.</p>
+</div></section>
+<section style="padding-top:30px"><div class="wrap">
+<div class="lab reveal" id="typing">
+<h2>⌨️ Typing Mood Lab</h2>
+<p>KeyMood-AI reads emotion from <i>how</i> you type, compared with your own normal rhythm. This is a small, simple version of that idea. Type a few lines below, press <b>Set my baseline</b>, then type again in a different mood or speed.</p>
+<textarea id="typebox" placeholder="Start typing here. Tell me about your day, or anything at all…" spellcheck="false"></textarea>
+<div class="meters">
+<div class="meter"><span>Speed (WPM)</span><b id="m-wpm">0</b><i><u id="b-wpm"></u></i></div>
+<div class="meter"><span>Key hold</span><b id="m-hold">0 ms</b><i><u id="b-hold"></u></i></div>
+<div class="meter"><span>Gap between keys</span><b id="m-gap">0 ms</b><i><u id="b-gap"></u></i></div>
+<div class="meter"><span>Corrections</span><b id="m-err">0%</b><i><u id="b-err"></u></i></div>
+</div>
+<div class="vibe" id="vibe"><div class="em" id="vibe-em">⌨️</div><div><b id="vibe-t">Keep typing…</b><small id="vibe-s">Type about 15 keys or more and I will take a reading.</small></div></div>
+<div class="btn-row" style="margin-top:20px"><button class="btn primary" id="btn-base" type="button">Set my baseline</button><button class="btn" id="btn-reset" type="button">Start over</button></div>
+<p class="note">This is just for fun. It is a simple rule-based demo, not a medical or psychological tool, and real typing varies for many reasons.</p>
+</div>
+<div class="lab reveal" id="matrix">
+<h2>🧭 Priority Matrix</h2>
+<p>A task that is due today is not always the most important one. Add tasks, mark each as urgent and/or important, and they sort into four boxes. Tap the buttons on a task to move it. The three starter tasks are the example from my screening assignment.</p>
+<form class="addrow" id="addform"><input id="addtext" placeholder="Add a task…" maxlength="70" autocomplete="off"><div class="tog"><label><input type="checkbox" id="f-u"><span>Urgent</span></label><label><input type="checkbox" id="f-i"><span>Important</span></label></div><button class="btn primary" type="submit">Add</button></form>
+<div class="matrix">
+<div class="quad q1"><h4>Do now</h4><small>Urgent and important</small><div id="q1"></div></div>
+<div class="quad q2"><h4>Plan it</h4><small>Important, not urgent</small><div id="q2"></div></div>
+<div class="quad q3"><h4>Handle quickly</h4><small>Urgent, not important</small><div id="q3"></div></div>
+<div class="quad q4"><h4>Park it</h4><small>Neither. Note it and ask for a deadline.</small><div id="q4"></div></div>
+</div></div>
+</div></section>
+</main>
+<footer><div class="wrap row">
+<div><b style="font-family:var(--display);font-size:1.25rem">Jinit Gandhi</b><br><span style="color:var(--muted)">Built by hand in 2026. Thanks for stopping by.</span></div>
+<div><a href="https://linkedin.com/in/jinit-gandhi-1b70b4298" target="_blank" rel="noopener">LinkedIn</a><a href="https://github.com/jinit0001" target="_blank" rel="noopener">GitHub</a><a href="mailto:gandhijinit@gmail.com">Email</a></div>
+</div></footer>
+<div class="toast" role="status"></div>
+<script src="js/main.js"></script>
+</body></html>

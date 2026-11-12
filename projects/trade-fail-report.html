@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Trade Fail Report · Jinit Gandhi</title>
+<meta name="description" content="A client wants to buy a painting before a seller deadline, but five transactions are stuck. How I traced the cause and who I pulled in.">
+<meta property="og:title" content="The Trade Fail Report · Jinit Gandhi"><meta property="og:description" content="A client wants to buy a painting before a seller deadline, but five transactions are stuck. How I traced the cause and who I pulled in.">
+<meta name="theme-color" content="#fff8ef">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='28' fill='%23ff6b4a'/%3E%3Ctext x='50' y='70' font-size='62' text-anchor='middle' fill='white' font-family='Arial' font-weight='700'%3EJ%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<script>document.documentElement.classList.add('js');try{var x=sessionStorage.getItem('vx'),y=sessionStorage.getItem('vy');if(x){document.documentElement.style.setProperty('--vx',x);document.documentElement.style.setProperty('--vy',y)}}catch(e){}</script>
+</head><body>
+<div id="loader"><div class="name"><span style="--i:0">J</span><span style="--i:1">i</span><span style="--i:2">n</span><span style="--i:3">i</span><span style="--i:4">t</span><span style="--i:5">&nbsp;</span><span style="--i:6">G</span><span style="--i:7">a</span><span style="--i:8">n</span><span style="--i:9">d</span><span style="--i:10">h</span><span style="--i:11">i</span></div><div class="bar"><i></i></div></div><div id="progress"></div><div class="curtain"><b>Jinit Gandhi</b></div><div class="glow"></div>
+<header class="site"><div class="wrap nav">
+<a class="logo" href="../index.html"><i>J</i>Jinit Gandhi</a>
+<button class="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+<nav class="links"><a href="../index.html">Home</a><a href="../about.html">About</a><a href="../projects.html" class="active">Projects</a><a href="../lab.html">Lab</a><a href="../contact.html" class="cta">Say hi</a></nav>
+</div></header>
+<main>
+<section class="pagehead"><div class="blob b1" style="background:#ffb84d;opacity:.38" data-speed=".1"></div><div class="wrap">
+<a href="../projects.html" style="font-weight:700;text-decoration:none;color:var(--coral)">← All projects</a>
+<h1 class="split" style="margin-top:18px">The Trade Fail Report</h1>
+<p class="lead fade-in" style="--d:.9s">A client wanted to buy a painting before a seller deadline, but five transactions were stuck. Here is how I traced the cause and who I pulled in.</p>
+<div class="chips fade-in" style="--d:1.1s"><span class="chip">Operations simulation</span><span class="chip">Goldman Sachs · Forage</span><span class="chip">Root-cause analysis</span><span class="chip">2026</span></div>
+</div></section>
+<section style="padding-top:10px"><div class="wrap article">
+<div class="callout"><b>A simulation, not a real client</b>This is my work from the Goldman Sachs Operations Job Simulation on Forage. The client, the painting and the transactions are part of the exercise. The thinking and the report are mine.</div>
+<h2>The scenario</h2>
+<p>A very-high-net-worth client (Client A) wants to buy a Takashi Murakami painting. The seller has set a deadline. The money for the purchase depends on one transaction, but when I reviewed the account data, five transactions were sitting in <b>Pending</b>. My job was to work out why, who needed to act, and what to do before the deadline.</p>
+<h2>What I found</h2>
+<p>Five open transactions on the account, each stuck for a different reason:</p>
+<div class="chain">
+<div class="txn key reveal"><span class="id">TXN001</span><div><b>Buy · funds the painting</b><small>Awaiting funds transfer</small><span class="status">Pending</span></div><span class="amt">$1,000,000</span></div>
+<div class="txn reveal"><span class="id">TXN003</span><div><b>Buy · compliance review</b><small>An open regulatory (KYC) item on the account</small><span class="status">Pending</span></div><span class="amt">$1,500,000</span></div>
+<div class="txn reveal"><span class="id">TXN006</span><div><b>Buy · internal approval</b><small>A sign-off bottleneck</small><span class="status">Pending</span></div><span class="amt">$2,500,000</span></div>
+<div class="txn reveal"><span class="id">TXN008</span><div><b>Buy · funds not available</b><small>A liquidity gap on the account</small><span class="status">Pending</span></div><span class="amt">$700,000</span></div>
+<div class="txn reveal"><span class="id">TXN010</span><div><b>Sell · awaiting documentation</b><small>Likely the source of the liquidity gap</small><span class="status">Pending</span></div><span class="amt">$2,200,000</span></div>
+</div>
+<p>The key insight was that these were not five separate problems. The compliance hold (TXN003) and the missing documents on the sale (TXN010) were both upstream of the one transaction that mattered, TXN001. If either stayed open, the client could lose the painting.</p>
+<h2>Who needed to act</h2>
+<ul><li><b>Trading Desk:</b> confirm the execution status of TXN001 and prioritise its settlement, and clarify whether TXN010 was meant to be the funding source.</li>
+<li><b>Compliance and Risk:</b> speed up the review on TXN003. Because it was a single purchase over $1M for a UHNW client, it should also be flagged for enhanced due diligence.</li>
+<li><b>Client Service:</b> ask the client for the missing TXN010 documents and keep them informed about timing.</li>
+<li><b>IT:</b> not needed for this client. I noted that another client's TXN004 had a technical issue and should go to IT separately.</li></ul>
+<h2>The risks</h2>
+<ul><li><b>Client risk:</b> miss the seller's deadline and the client loses the painting, which damages the relationship.</li>
+<li><b>Regulatory risk:</b> moving funds before the compliance review clears would be a breach, however much time pressure there is. That hold cannot be bypassed.</li>
+<li><b>Liquidity risk:</b> even after compliance clears, TXN001 could still fail if the funds from TXN010 are not unlocked.</li></ul>
+<div class="callout warm"><b>Asking for advice</b>I checked my reasoning with a senior colleague, the Operations Manager. They confirmed that compliance must clear before any related funds move, even under pressure, and advised me to escalate the TXN010 documents as the fastest way to free up liquidity, and to tell the client the expected timeline early instead of waiting until the deadline was at risk.</div>
+<h2>What I did</h2>
+<ul><li>Escalated TXN003 to Compliance for priority review, linked to the time-sensitive purchase.</li>
+<li>Asked for the outstanding TXN010 documents from the client through Client Service.</li>
+<li>Flagged TXN001 to the Trading Desk for priority settlement once funds and compliance were confirmed.</li>
+<li>Set a checkpoint 24 hours before the deadline, with an alert if anything was still open.</li></ul>
+<h2>What I'd improve for next time</h2>
+<ul><li>An automatic alert when a client has several large pending transactions, so linked delays show up earlier.</li>
+<li>Flag the funding transaction at intake for time-sensitive purchases, so compliance and documents are handled early and not found in a routine review.</li>
+<li>A standing checklist for single-asset purchases (art, property) covering funds, compliance and documents before the transaction is scheduled.</li></ul>
+<div class="callout"><b>Why it matters to me</b>The hardest part of operations is seeing that several separate-looking problems are really one chain. I enjoyed tracing it, and just as much, deciding who needed to hear what, and when.</div>
+
+<div class="nextprev"><a href="opentrace.html"><small>← Previous</small><b>OpenTrace</b></a><a href="aicines.html"><small>Next →</small><b>AICines Teardown</b></a></div>
+</div></section>
+</main>
+<footer><div class="wrap row">
+<div><b style="font-family:var(--display);font-size:1.25rem">Jinit Gandhi</b><br><span style="color:var(--muted)">Built by hand in 2026. Thanks for stopping by.</span></div>
+<div><a href="https://linkedin.com/in/jinit-gandhi-1b70b4298" target="_blank" rel="noopener">LinkedIn</a><a href="https://github.com/jinit0001" target="_blank" rel="noopener">GitHub</a><a href="mailto:gandhijinit@gmail.com">Email</a></div>
+</div></footer>
+<div class="toast" role="status"></div>
+<script src="../js/main.js"></script>
+</body></html>
