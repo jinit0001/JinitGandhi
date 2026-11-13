@@ -5,7 +5,7 @@
 
 export const site = {
   name: 'Jinit Gandhi',
-  roles: ['Project Management', 'Product Management', 'Business Operations'],
+  roles: ['Project Management', 'Product Management', 'Business Analysis & Research'],
   headline: 'Building Clarity Between *Ideas,* *People* & Execution.',
   intro:
     "I'm Jinit Gandhi — an aspiring Project and Product Management professional interested in turning complex ideas into structured execution.",
@@ -56,8 +56,8 @@ export interface JourneyItem {
 
 export const journey: JourneyItem[] = [
   {
-    when: '2026', title: 'Operations Job Simulation', org: 'Goldman Sachs · via Forage', kind: 'Virtual job simulation', tags: ['Operations', 'Simulation'],
-    summary: 'Traced a stuck client transaction to its root cause across a compliance hold and a liquidity gap, and wrote a formal Trade Fail Report.',
+    when: '2026', title: 'Operations', org: 'Goldman Sachs', kind: 'Virtual job simulation', tags: ['Operations', 'Simulation'],
+    summary: 'Job simulation via Forage. Traced a stuck client transaction to its root cause across a compliance hold and a liquidity gap, and wrote a formal Trade Fail Report.',
     details: [
       'Reviewed account data and found five pending transactions that were really one chain of delays, all upstream of the one transaction funding the client’s purchase.',
       'Worked out which teams had to act: Trading Desk, Compliance and Risk, and Client Service. I also noted which issue belonged to IT instead.',
@@ -66,8 +66,8 @@ export const journey: JourneyItem[] = [
     ],
   },
   {
-    when: '2026', title: 'Product Management Job Simulation', org: 'Electronic Arts · via Forage', kind: 'Virtual job simulation', tags: ['Project Management', 'Simulation'],
-    summary: 'Analysed engagement, retention and churn data and used segmentation and KPI analysis to shape product recommendations.',
+    when: '2026', title: 'Product Management', org: 'Electronic Arts', kind: 'Virtual job simulation', tags: ['Project Management', 'Simulation'],
+    summary: 'Job simulation via Forage. Analysed engagement, retention and churn data and used segmentation and KPI analysis to shape product recommendations.',
     details: [
       'Segmented users and compared how groups behaved over time.',
       'Turned the analysis into a structured report and presentation aimed at stakeholder review.',
@@ -217,8 +217,9 @@ export const process = [
 
 export interface Learning { title: string; org: string; label: string; simulation?: boolean; text: string }
 export const learning: Learning[] = [
-  { title: 'Product Management Simulation', org: 'Electronic Arts', label: 'Virtual job simulation · Forage', simulation: true, text: 'A guided exercise on engagement, retention and churn analysis. It is a virtual simulation, not employment.' },
-  { title: 'Operations Simulation', org: 'Goldman Sachs', label: 'Virtual job simulation · Forage', simulation: true, text: 'A guided exercise tracing a delayed client transaction and writing a Trade Fail Report. It is a virtual simulation, not employment.' },
+  { title: 'Product Management', org: 'Electronic Arts', label: 'Virtual job simulation', simulation: true, text: 'Job simulation via Forage. A guided exercise on engagement, retention and churn analysis. It is a virtual simulation, not employment.' },
+  { title: 'Operations', org: 'Goldman Sachs', label: 'Virtual job simulation', simulation: true, text: 'Job simulation via Forage. A guided exercise tracing a delayed client transaction and writing a Trade Fail Report. It is a virtual simulation, not employment.' },
   { title: 'Basics of Business Analytics', org: 'UniAthena & Cambridge International Qualifications', label: 'Certification · 2026', text: 'Foundations of business analytics.' },
   { title: 'AI Foundations for Business', org: 'IBM · Coursera', label: 'Certification · 2026', text: 'How AI applies to business problems.' },
+  { title: 'Introduction to Internet of Things', org: 'NPTEL', label: 'Certification · Jul–Oct 2026', text: '12-week course. Scored 72%, with 4 credits recommended.' },
 ]

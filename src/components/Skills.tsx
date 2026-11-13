@@ -7,7 +7,7 @@ export function Skills() {
   const [id, setId] = useState(skills[0].id)
   const group = skills.find((s) => s.id === id)!
   return (
-    <section id="skills" className="section">
+    <section id="skills" className="section pb-[clamp(40px,6vw,80px)]">
       <div className="container-x">
         <Reveal><p className="eyebrow mb-4">04 — Skills &amp; Capabilities</p></Reveal>
         <SplitWords text="What I can genuinely talk through." className="max-w-3xl text-4xl font-semibold leading-[1.02] tracking-tight sm:text-6xl" />
@@ -24,7 +24,7 @@ export function Skills() {
               ))}
             </div>
           </div>
-          <div className="min-w-0 lg:col-span-8">
+          <div className="min-w-0 lg:col-span-8 lg:min-h-[620px]">
             <AnimatePresence mode="wait">
               <motion.div key={group.id} initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} transition={{ duration: 0.35 }}>
                 <p className="mb-6 text-xl text-fg/85">{group.blurb}</p>

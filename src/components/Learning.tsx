@@ -8,7 +8,7 @@ export function Learning() {
     <section id="learning" className="section">
       <div className="container-x">
         <Reveal><p className="eyebrow mb-4">06 — Certifications &amp; Learning</p></Reveal>
-        <SplitWords text="Always learning, clearly labelled." className="max-w-3xl text-4xl font-semibold leading-[1.02] tracking-tight sm:text-6xl" />
+        <SplitWords text="Always learning." className="max-w-3xl text-4xl font-semibold leading-[1.02] tracking-tight sm:text-6xl" />
         <div className="mt-14 grid gap-5 md:grid-cols-2">
           {learning.map((l, i) => (
             <motion.article key={l.title} initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: '0px 0px -60px 0px' }} transition={{ duration: 0.9, delay: (i % 2) * 0.1, ease: [0.22, 0.8, 0.2, 1] }} whileHover={{ y: -6 }} className="glass group relative overflow-hidden rounded-3xl p-8">
