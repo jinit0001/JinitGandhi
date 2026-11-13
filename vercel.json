@@ -1,11 +1,5 @@
 {
-  "cleanUrls": true,
-  "trailingSlash": false,
-  "redirects": [
-    {"source": "/projects/websites-co-in", "destination": "/projects", "permanent": false},
-    {"source": "/projects/websites-co-in.html", "destination": "/projects", "permanent": false}
-  ],
-  "headers": [
-    {"source": "/(.*)", "headers": [{"key": "X-Content-Type-Options", "value": "nosniff"}]}
-  ]
+  "framework": "vite",
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist"
 }
